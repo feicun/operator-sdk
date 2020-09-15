@@ -31,34 +31,41 @@ require (
 	github.com/sergi/go-diff v1.0.0
 	github.com/sirupsen/logrus v1.5.0
 	github.com/spf13/afero v1.2.2
-	github.com/spf13/cobra v0.0.5
+	github.com/spf13/cobra v1.0.0
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.4.0
 	github.com/stretchr/testify v1.4.0
 	github.com/ziutek/mymysql v1.5.4 // indirect
 	go.uber.org/zap v1.14.1
-	golang.org/x/tools v0.0.0-20200327195553-82bb89366a1e
+	golang.org/x/tools v0.0.0-20200616195046-dc31b401abb5
 	gomodules.xyz/jsonpatch/v3 v3.0.1
 	gopkg.in/gorp.v1 v1.7.2 // indirect
 	gopkg.in/yaml.v2 v2.2.8
 	helm.sh/helm/v3 v3.1.2
-	k8s.io/api v0.17.4
-	k8s.io/apiextensions-apiserver v0.17.4
-	k8s.io/apimachinery v0.17.4
+	k8s.io/api v0.18.2
+	k8s.io/apiextensions-apiserver v0.18.2
+	k8s.io/apimachinery v0.18.2
 	k8s.io/cli-runtime v0.17.4
 	k8s.io/client-go v12.0.0+incompatible
-	k8s.io/code-generator v0.17.4
-	k8s.io/gengo v0.0.0-20191010091904-7fa3014cb28f
+	k8s.io/code-generator v0.18.2
+	k8s.io/gengo v0.0.0-20200114144118-36b2048a9120
 	k8s.io/helm v2.16.3+incompatible
 	k8s.io/klog v1.0.0
 	k8s.io/kube-state-metrics v1.7.2
 	k8s.io/kubectl v0.17.4
 	sigs.k8s.io/controller-runtime v0.5.2
-	sigs.k8s.io/controller-tools v0.2.8
-	sigs.k8s.io/yaml v1.1.0
+	sigs.k8s.io/controller-tools v0.4.0
+	sigs.k8s.io/yaml v1.2.0
 )
 
+replace github.com/Azure/go-autorest => github.com/Azure/go-autorest v13.3.2+incompatible // Required by OLM
+
+// Pin kubernetes dependencies to 1.17.4
 replace (
-	github.com/Azure/go-autorest => github.com/Azure/go-autorest v13.3.2+incompatible // Required by OLM
-	k8s.io/client-go => k8s.io/client-go v0.17.4 // Required by prometheus-operator
+	k8s.io/api => k8s.io/api v0.17.4
+	k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.17.4
+	k8s.io/apimachinery => k8s.io/apimachinery v0.17.4
+	k8s.io/cli-runtime => k8s.io/cli-runtime v0.17.4
+	k8s.io/client-go => k8s.io/client-go v0.17.4
+	k8s.io/code-generator => k8s.io/code-generator v0.17.4
 )
